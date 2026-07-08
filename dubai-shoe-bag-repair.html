@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubai Shoe and Bag Repair — Al Karama, Dubai</title>
+<meta name="description" content="Shoes, bags, belts, and suitcases repaired by hand. Two generations of craftsmanship in Al Karama, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Mulish:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --umber: #2B211B;
+    --umber-deep: #201810;
+    --walnut: #3D2F26;
+    --cream: #EDE3D3;
+    --brass: #C9A15A;
+    --rust: #A24A38;
+    --line: rgba(237,227,211,0.14);
+    --radius: 6px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--umber); color:var(--cream); font-family:'Mulish', sans-serif;}
+  h1,h2,h3,.display{font-family:'Zilla Slab', serif;}
+  .mono{font-family:'Space Mono', monospace; letter-spacing:0.03em;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  /* leather grain texture */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; opacity:0.6;
+    background:
+      radial-gradient(circle at 10% 15%, rgba(201,161,90,0.06), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(162,74,56,0.07), transparent 45%),
+      repeating-linear-gradient(0deg, rgba(237,227,211,0.012) 0 1px, transparent 1px 3px);
+  }
+
+  /* ===== NAV ===== */
+  nav{position:sticky; top:0; z-index:50; background:rgba(43,33,27,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .logo{font-family:'Zilla Slab',serif; font-weight:700; font-size:1.25rem;}
+  .logo span{color:var(--brass);}
+  .navlinks{display:flex; gap:30px; font-size:0.88rem; font-weight:500;}
+  .navlinks a{opacity:0.7; border-bottom:1px solid transparent; padding-bottom:3px; transition:.2s;}
+  .navlinks a:hover{opacity:1; border-color:var(--brass);}
+  .nav-cta{background:var(--brass); color:var(--umber-deep); padding:10px 20px; font-size:0.82rem; font-weight:700; border-radius:var(--radius);}
+  @media (max-width:760px){ .navlinks{display:none;} }
+
+  /* ===== HERO — cross-stitch signature ===== */
+  .hero{padding:88px 0 20px; border-bottom:1px solid var(--line); overflow:hidden;}
+  .hero .wrap{display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px; align-items:center;}
+  .eyebrow{font-family:'Space Mono',monospace; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.16em; color:var(--brass); margin-bottom:20px;}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.5rem); line-height:1.12; font-weight:700; margin-bottom:22px;}
+  .hero h1 em{font-style:italic; color:var(--rust);}
+  .hero p.lede{font-size:1.05rem; line-height:1.75; opacity:0.82; max-width:48ch; margin-bottom:32px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:14px 26px; font-size:0.88rem; font-weight:700; border-radius:var(--radius); transition:.2s;}
+  .btn-primary{background:var(--brass); color:var(--umber-deep);}
+  .btn-primary:hover{background:var(--cream);}
+  .btn-ghost{border:1.5px solid var(--cream);}
+  .btn-ghost:hover{background:var(--cream); color:var(--umber-deep);}
+
+  .rating-card{background:var(--walnut); border:1px solid var(--line); border-radius:var(--radius); padding:28px;}
+  .rating-card .big{font-family:'Zilla Slab',serif; font-size:3.2rem; font-weight:700; line-height:1;}
+  .rating-card .stars{color:var(--brass); letter-spacing:2px; margin:8px 0;}
+  .rating-card p{font-family:'Space Mono',monospace; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.7;}
+  .quote{margin-top:18px; font-style:italic; font-size:0.92rem; line-height:1.6; border-left:2px solid var(--rust); padding-left:14px; opacity:0.85;}
+  @media (max-width:840px){ .hero .wrap{grid-template-columns:1fr;} }
+
+  /* cross-stitch strip */
+  .stitch-strip{width:100%; height:56px;}
+  .stitch-strip svg{width:100%; height:100%; display:block;}
+  .stitch-x{stroke:var(--brass); stroke-width:2; stroke-linecap:round;
+    stroke-dasharray:26; stroke-dashoffset:26; animation:pop-stitch 2.6s ease-in-out infinite;}
+  @keyframes pop-stitch{ 0%{stroke-dashoffset:26; opacity:0;} 20%{opacity:1;} 60%{stroke-dashoffset:0; opacity:1;} 100%{stroke-dashoffset:0; opacity:1;} }
+  @media (prefers-reduced-motion: reduce){ .stitch-x{animation:none; stroke-dashoffset:0;} }
+
+  /* ===== SECTIONS ===== */
+  section{padding:80px 0;}
+  .kicker{font-family:'Space Mono',monospace; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--brass); margin-bottom:14px;}
+  .section-head{max-width:56ch; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700;}
+  .rule{height:1px; background:var(--line);}
+
+  /* ===== GENERATIONS TIMELINE ===== */
+  .timeline{position:relative; padding-left:32px; border-left:2px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-39px; top:4px; width:14px; height:14px;
+    border-radius:50%; background:var(--brass); border:3px solid var(--umber);
+  }
+  .tl-item .yr{font-family:'Space Mono',monospace; font-size:0.78rem; color:var(--brass); margin-bottom:6px;}
+  .tl-item h3{font-size:1.3rem; margin-bottom:8px;}
+  .tl-item p{opacity:0.82; line-height:1.7; max-width:56ch;}
+
+  /* ===== SERVICES ===== */
+  .service-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .service-card{background:var(--walnut); border:1px solid var(--line); border-radius:var(--radius); padding:28px 24px; transition:transform .2s, box-shadow .2s;}
+  .service-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px rgba(0,0,0,0.28);}
+  .service-card h3{font-size:1.15rem; margin-bottom:10px;}
+  .service-card p{font-size:0.92rem; opacity:0.78; line-height:1.65; margin-bottom:14px;}
+  .service-card .price{font-family:'Space Mono',monospace; font-weight:700; color:var(--brass); font-size:0.88rem;}
+  @media (max-width:840px){ .service-grid{grid-template-columns:1fr;} }
+
+  /* ===== FIND US ===== */
+  .find-wrap{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .find-panel{padding:44px; background:var(--walnut);}
+  .find-panel.brass{background:var(--brass); color:var(--umber-deep);}
+  .find-panel h3{font-size:1.25rem; margin-bottom:20px; font-weight:700;}
+  .hours-row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--line); font-family:'Space Mono',monospace; font-size:0.88rem;}
+  .find-panel.brass .hours-row{border-bottom:1px solid rgba(43,33,27,0.2);}
+  .contact-line{display:flex; gap:14px; margin-bottom:16px; font-size:0.94rem;}
+  .contact-line .k{font-family:'Space Mono',monospace; font-size:0.7rem; text-transform:uppercase; opacity:0.7; min-width:64px; padding-top:2px;}
+  @media (max-width:840px){ .find-wrap{grid-template-columns:1fr;} }
+
+  footer{padding:44px 0; border-top:1px solid var(--line);}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  footer .fine{font-family:'Space Mono',monospace; font-size:0.74rem; opacity:0.55;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Dubai Shoe<span>&amp;</span>Bag Repair</div>
+    <div class="navlinks">
+      <a href="#story">Our Story</a>
+      <a href="#services">Services</a>
+      <a href="#find">Visit</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/971581886196" target="_blank" rel="noopener">WhatsApp Us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Al Karama · Dubai</div>
+      <h1>If it's worn, torn, or <em>broken</em> — bring it in.</h1>
+      <p class="lede">Shoes, bags, belts, suitcases — repaired by hand, the way they should be. What even the authorized dealers said couldn't be fixed, we've probably already fixed twice.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/971581886196" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+971581886196">Call: 058 188 6196</a>
+      </div>
+    </div>
+    <div class="rating-card">
+      <div class="big">4.9</div>
+      <div class="stars">★★★★★</div>
+      <p>1,068 reviews on Google</p>
+      <div class="quote">"No job is too big or too small for him."</div>
+    </div>
+  </div>
+  <div class="stitch-strip">
+    <svg viewBox="0 0 1080 56" preserveAspectRatio="none">
+      <g id="stitches"></g>
+    </svg>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="kicker">Our Story</div>
+    <div class="section-head">
+      <h2>Two generations, one craft</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">Est. Dubai, early 2000s</div>
+        <h3>Sharbat Khan</h3>
+        <p>Started fixing shoes, bags, and belts for the neighborhood — building a reputation on care and craftsmanship rather than shortcuts, one repair at a time.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">Present day</div>
+        <h3>Shafiullah</h3>
+        <p>Carries the same standard forward — mending shoes, bags, and suitcases with the same tireless attention his father showed, and still finding time for a cup of tea and a chat with every customer who walks in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">What We Fix</div>
+      <h2>If it's leather, canvas, or stitched — we can help</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Shoe Repair</h3>
+        <p>Soles, heels, padding, stitching — sneakers, boots, and dress shoes alike.</p>
+        <div class="price">From AED 40</div>
+      </div>
+      <div class="service-card">
+        <h3>Bag &amp; Suitcase Repair</h3>
+        <p>Zippers, wheels, handles, and structural repairs on bags of every kind.</p>
+        <div class="price">From AED 50</div>
+      </div>
+      <div class="service-card">
+        <h3>Belts &amp; Leather Goods</h3>
+        <p>Resizing, restitching, and restoration for belts and small leather items.</p>
+        <div class="price">From AED 30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<section id="find">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Visit</div>
+      <h2>Hours &amp; how to reach us</h2>
+    </div>
+    <div class="find-wrap">
+      <div class="find-panel">
+        <h3>Opening Hours</h3>
+        <div class="hours-row"><span>Mon, Tue, Thu – Sun</span><span>8:00 – 23:30</span></div>
+        <div class="hours-row"><span>Wed</span><span>8:30 – 23:30</span></div>
+      </div>
+      <div class="find-panel brass">
+        <h3>Get in Touch</h3>
+        <div class="contact-line"><span class="k">Address</span><span>53 4C St, Al Karama, Dubai</span></div>
+        <div class="contact-line"><span class="k">Phone</span><span><a href="tel:+971581886196">058 188 6196</a></span></div>
+        <a class="btn" style="background:var(--umber-deep); color:var(--cream); margin-top:8px;" href="https://wa.me/971581886196" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="font-size:1rem;">Dubai Shoe &amp; Bag Repair</div>
+    <div class="fine">© 2026 Dubai Shoe and Bag Repair, Al Karama, Dubai</div>
+  </div>
+</footer>
+
+<script>
+  const stitches = document.getElementById('stitches');
+  let svg = '';
+  for (let x = 20; x <= 1060; x += 40) {
+    const delay = ((x / 40) % 10) * 0.15;
+    svg += `<path class="stitch-x" style="animation-delay:${delay}s" d="M${x-8} 20 L${x+8} 36 M${x+8} 20 L${x-8} 36"/>`;
+  }
+  stitches.innerHTML = svg;
+</script>
+
+</body>
+</html>
